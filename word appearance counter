@@ -1,0 +1,5 @@
+ch = input('Enter the character to be counted: ')
+f = open('inputFile.txt')
+wordlist = f.read().lower().count(ch)
+f.close()
+print(f'inputFile.txt has {wordlist} instances of letter {ch}.')
