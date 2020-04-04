@@ -1,0 +1,21 @@
+def word_count(str):
+    words = str.lower().split()
+    counts = {}
+
+    for word in words:
+        if word in counts:
+            counts[word] += 1
+        else:
+            counts[word] = 1
+
+    return counts
+
+
+f = open('input.txt')
+content = f.read()
+output = word_count(content)
+f = open('output.txt', 'w')
+for key in list(sorted(output.keys())):
+    f.write(str(key+':'+str(output[key])))
+    f.write('\n')
+f.close()
